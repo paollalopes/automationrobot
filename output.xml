@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2025-06-24T20:11:41.797131" rpa="false" schemaversion="5">
+<suite id="s1" name="Amazon Testes" source="c:\Users\Stoom\OneDrive - PET CENTER COMERCIO E PARTICIPACOES SA\Documentos\RobotFramework\UdemyRobot\amazon_testes.robot">
+<kw name="Abrir o navegador" owner="amazon_resources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-24T20:11:42.022462" level="INFO">Opening browser 'Chrome' to base url 'https://www.amazon.com.br/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-24T20:11:42.021137" elapsed="2.450421"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-24T20:11:44.472744" elapsed="0.046357"/>
+</kw>
+<status status="PASS" start="2025-06-24T20:11:42.021137" elapsed="2.497964"/>
+</kw>
+<test id="s1-t1" name="Caso de teste 02 - Pesquisa de um produto" line="20">
+<kw name="Dado que estou na home page da Amazon.com.br" owner="amazon_resources">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-06-24T20:11:44.521717" level="INFO">Opening url 'https://www.amazon.com.br/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-06-24T20:11:44.520305" elapsed="2.833637"/>
+</kw>
+<status status="PASS" start="2025-06-24T20:11:44.520305" elapsed="2.833637"/>
+</kw>
+<kw name="Quando digitar o nome de produto &quot;Kerastase&quot; no campo de pesquisa" owner="amazon_resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-24T20:11:47.356105" level="INFO">Typing text 'Kerastase' into text field 'id=twotabsearchtextbox'.</msg>
+<arg>id=twotabsearchtextbox</arg>
+<arg>Kerastase</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T20:11:47.355069" elapsed="0.191253"/>
+</kw>
+<status status="PASS" start="2025-06-24T20:11:47.355069" elapsed="0.191253"/>
+</kw>
+<kw name="E clicar no botão de pesquisa" owner="amazon_resources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-24T20:11:47.548322" level="INFO">Clicking element 'css=.nav-search-submit'.</msg>
+<arg>css=.nav-search-submit</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T20:11:47.547322" elapsed="1.999093"/>
+</kw>
+<status status="PASS" start="2025-06-24T20:11:47.547322" elapsed="1.999093"/>
+</kw>
+<kw name="Então o resultado da pesquisa deve listar o produto pesquisado" owner="amazon_resources">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(text(), 'Kerastase')]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-24T20:11:49.547586" elapsed="0.015839"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-06-24T20:11:49.596642" level="INFO">Element 'xpath=//span[contains(text(), 'Kerastase')]' is displayed.</msg>
+<arg>xpath=//span[contains(text(), 'Kerastase')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-24T20:11:49.564433" elapsed="0.032790"/>
+</kw>
+<status status="PASS" start="2025-06-24T20:11:49.546415" elapsed="0.050808"/>
+</kw>
+<doc>Este teste verifica a busca de um produto</doc>
+<tag>busca_produtos</tag>
+<status status="PASS" start="2025-06-24T20:11:44.519101" elapsed="5.078122"/>
+</test>
+<test id="s1-t2" name="Caso de Teste 03 - Adicionar Produto no Carrinho" line="28">
+<kw name="Dado que estou no resultado da pesquisa exibindo o produto &quot;Kerastase&quot;" owner="amazon_resources">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=(//span[contains(text(),'Kérastase Máscara de Tratamento Resistance Masque ')])[1]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-24T20:11:49.600236" elapsed="0.015354"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-06-24T20:11:49.675643" level="INFO">Element 'xpath=(//span[contains(text(),'Kérastase Máscara de Tratamento Resistance Masque ')])[1]' is displayed.</msg>
+<arg>xpath=(//span[contains(text(),'Kérastase Máscara de Tratamento Resistance Masque ')])[1]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-24T20:11:49.615590" elapsed="0.060053"/>
+</kw>
+<status status="PASS" start="2025-06-24T20:11:49.599236" elapsed="0.076407"/>
+</kw>
+<kw name="Quando adicionar o produto &quot;Kerastase&quot; no carrinho" owner="amazon_resources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-24T20:11:49.677732" level="INFO">Clicking element 'xpath=(//span[contains(text(),'Kérastase Máscara de Tratamento Resistance Masque ')])[1]'.</msg>
+<arg>xpath=(//span[contains(text(),'Kérastase Máscara de Tratamento Resistance Masque ')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T20:11:49.676719" elapsed="2.394288"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-24T20:11:52.072003" level="INFO">Clicking element 'id=add-to-cart-button'.</msg>
+<arg>id=add-to-cart-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T20:11:52.072003" elapsed="1.778091"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//h1[contains(text(), 'Adicionado ao carrinho')]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-24T20:11:53.851375" elapsed="0.036885"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-06-24T20:11:53.944187" level="INFO">Element 'xpath=//h1[contains(text(), 'Adicionado ao carrinho')]' is displayed.</msg>
+<arg>xpath=//h1[contains(text(), 'Adicionado ao carrinho')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-24T20:11:53.888260" elapsed="0.055927"/>
+</kw>
+<status status="PASS" start="2025-06-24T20:11:49.676719" elapsed="4.267468"/>
+</kw>
+<kw name="E clicar em &quot;Ir para o carrinho&quot;" owner="amazon_resources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-24T20:11:53.946184" level="INFO">Clicking element 'xpath=(//a[@href='/cart?ref_=sw_gtc'])'.</msg>
+<arg>xpath=(//a[@href='/cart?ref_=sw_gtc'])</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T20:11:53.945185" elapsed="1.159098"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=(//span[contains(text(),'Kérastase Máscara de Tratamento Resistance Masque ')])[1]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-24T20:11:55.105287" elapsed="0.017006"/>
+</kw>
+<status status="PASS" start="2025-06-24T20:11:53.945185" elapsed="1.178109"/>
+</kw>
+<kw name="Então o produto &quot;Kerastase&quot; deve ser mostrado no carrinho" owner="amazon_resources">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=(//span[contains(text(),'Kérastase Máscara de Tratamento Resistance Masque ')])[1]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-24T20:11:55.124047" elapsed="0.008695"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-06-24T20:11:55.161318" level="INFO">Element 'xpath=(//span[@class='a-truncate-cut'])[1]' is displayed.</msg>
+<arg>xpath=(//span[@class='a-truncate-cut'])[1]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-24T20:11:55.133939" elapsed="0.028414"/>
+</kw>
+<status status="PASS" start="2025-06-24T20:11:55.124047" elapsed="0.038306"/>
+</kw>
+<doc>Esse teste verifica a adição de um produto no carrinho de compras</doc>
+<tag>adicionar_carrinho</tag>
+<status status="PASS" start="2025-06-24T20:11:49.598238" elapsed="5.564115"/>
+</test>
+<test id="s1-t3" name="Caso de Teste 04 - Remover Produto do Carrinho" line="36">
+<kw name="Dado que estou no carrinho de compras com o produto &quot;Kerastase&quot;" owner="amazon_resources">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=(//span[contains(text(),'Kérastase Máscara de Tratamento Resistance Masque ')])[1]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-24T20:11:55.165825" elapsed="0.011188"/>
+</kw>
+<status status="PASS" start="2025-06-24T20:11:55.164315" elapsed="0.013739"/>
+</kw>
+<kw name="Quando remover o produto &quot;Kerastase&quot; do carrinho" owner="amazon_resources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-24T20:11:55.179051" level="INFO">Clicking element 'css=input[value='Excluir']'.</msg>
+<arg>css=input[value='Excluir']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-24T20:11:55.179051" elapsed="0.135411"/>
+</kw>
+<status status="PASS" start="2025-06-24T20:11:55.178054" elapsed="0.137398"/>
+</kw>
+<kw name="Então o carrinho deve ficar vazio" owner="amazon_resources">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-06-24T20:11:55.346944" level="INFO">Element 'xpath=(//div[@class='sc-list-item-removed-msg-delete a-padding-medium'])[1]' is displayed.</msg>
+<arg>xpath=(//div[@class='sc-list-item-removed-msg-delete a-padding-medium'])[1]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-24T20:11:55.316454" elapsed="0.030490"/>
+</kw>
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2025-06-24T20:11:55.388264" level="INFO">Element 'xpath=(//span[contains(text(),'Kérastase Máscara de Tratamento Resistance Masque ')])[1]' exists but is not displayed.</msg>
+<arg>xpath=(//span[contains(text(),'Kérastase Máscara de Tratamento Resistance Masque ')])[1]</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2025-06-24T20:11:55.346944" elapsed="0.041320"/>
+</kw>
+<status status="PASS" start="2025-06-24T20:11:55.315452" elapsed="0.072812"/>
+</kw>
+<doc>Esse teste verifica a remoção de um produto no carrinho de compras</doc>
+<tag>remover_carrinho</tag>
+<status status="PASS" start="2025-06-24T20:11:55.164315" elapsed="0.224989"/>
+</test>
+<kw name="Fechar o navegador" owner="amazon_resources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-24T20:11:55.391413" elapsed="2.258691"/>
+</kw>
+<status status="PASS" start="2025-06-24T20:11:55.390416" elapsed="2.260679"/>
+</kw>
+<doc>Essa suíte testa o site da Amazon</doc>
+<status status="PASS" start="2025-06-24T20:11:41.803074" elapsed="15.848021"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">adicionar_carrinho</stat>
+<stat pass="1" fail="0" skip="0">busca_produtos</stat>
+<stat pass="1" fail="0" skip="0">remover_carrinho</stat>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Amazon Testes">Amazon Testes</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
