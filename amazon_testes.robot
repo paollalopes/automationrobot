@@ -6,12 +6,9 @@ Suite Teardown    Fechar o navegador
 
 
 *** Test Cases ***
-# título deve estar encostado na margem do editor
-# usar TAB garante que dois espaços sejam dados no passo a passo do CT
 
 Caso de teste 01 - Acesso ao menu "Eletrônicos"
     [Documentation]    Esse teste verifica o menu eletrônico do site da Amazon.com.br
-    ...                aqui pode continuar escrevendo o documentation
     [Tags]             menus 
     Dado que estou na home page da Amazon.com.br
     Quando acessar o menu "Mais vendidos"
